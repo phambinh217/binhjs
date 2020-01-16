@@ -1,0 +1,2 @@
+## Intro
+For lazy developer

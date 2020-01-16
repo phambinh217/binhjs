@@ -1,0 +1,10 @@
+.menu {
+    .list-group-item {
+        .active,
+        &:hover {
+            background: rgba(70, 127, 207, 0.06);
+            border-top-right-radius: 10rem;
+            border-bottom-right-radius: 10rem;
+        }
+    }
+}

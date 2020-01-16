@@ -1,0 +1,15 @@
+/**
+ * Dashboard UI
+ */
+@import 'variables';
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'dashboard/dashboard';
+
+// Custom
+@import 'custom/header';
+@import 'custom/layout';
+@import 'custom/nav';
+@import 'custom/menu';
+@import 'custom/button';
+@import 'custom/form';
+@import 'custom/table';

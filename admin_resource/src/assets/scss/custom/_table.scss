@@ -1,0 +1,36 @@
+.table thead .sorting,
+.table thead .sorting_desc,
+.table thead .sorting_asc {
+    cursor: pointer;
+
+    &:hover {
+        background: $gray-100;
+    }
+}
+
+.table thead .sorting_desc,
+.table thead .sorting_asc {
+    color: $primary;
+}
+
+.table thead .sorting:before,
+.table thead .sorting_desc:after,
+.table thead .sorting:after,
+.table thead .sorting_asc:after {
+    font-family: 'feather' !important;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.table thead .sorting:after {
+    content: "\e92d";
+    visibility: hidden;
+}
+
+.table thead .sorting_asc:after {
+    content: "\e930";
+}
+
+.table thead .sorting_desc:after {
+    content: "\e92d";
+}

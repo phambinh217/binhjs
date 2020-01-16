@@ -1,0 +1,30 @@
+{
+  "name": "admin_resources",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.17",
+    "bootstrap": "^4.1.0",
+    "core-js": "^2.6.5",
+    "jquery": "^3.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.24.0",
+    "popper.js": "^1.15.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4",
+    "vuex-shared-mutations": "^1.0.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "vue-template-compiler": "^2.6.10",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+.page {
+    min-height: 100vh;
+}
+
+body.modal-open {
+    .page {
+        filter: blur(8px);
+    }
+}
