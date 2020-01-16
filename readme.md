@@ -22,11 +22,14 @@ For lazy developer, project base on expressjs and mongodb. Useful for nodejs web
 - Step 2. Run `nodemon -L bin/www` at root project
 
 # Previews
+Homepage
 ![binhjs](https://i.imgur.com/coKU2DE.png)
 
-![binhjs](https://i.imgur.com/4tZbCtC.png)
-
+Login page
 ![binhjs](https://i.imgur.com/vuDPftI.png)
+
+Dashboard
+![binhjs](https://i.imgur.com/4tZbCtC.png)
 
 # Ref
 - Author: https://phambinh.net
