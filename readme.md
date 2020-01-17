@@ -19,7 +19,12 @@ For lazy developer, project base on expressjs and mongodb. Useful for nodejs web
 
 # Install
 - Step 1. Clone this repo
-- Step 2. Run `nodemon -L bin/www` at root project
+- Step 2. Run `cp env.example .env`
+- Step 3. Config your information at `.env`
+- Step 4. Run `node application/commands -e <admin-emainl> -p <admin-password>` to create first admin user
+- Step 5. Run `nodemon -L bin/www` at root project to start
+
+# Run
 
 # Previews
 Homepage
