@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 require('module-alias/register');
@@ -9,10 +11,7 @@ let databaseConfig = require('@application/config/database');
 let userRepo = require('@application/repos/userRepo');
 let bcryptHelper = require('@application/helpers/bcrypt');
 
-mongoose.connect(databaseConfig.connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(databaseConfig.connectionString, databaseConfig.mongooseOptions);
 
 let emailUnique = function (field, email) {
     return {
@@ -50,8 +49,7 @@ let main = async function () {
     });
 
     if (validator.isPass() == false) {
-        console.error(validator.getFirstErrorMessage());
-        return;
+        return console.error(validator.getFirstErrorMessage());
     }
 
     let password = await bcryptHelper.bcrypt(program.password);
@@ -61,7 +59,7 @@ let main = async function () {
         password: password
     });
 
-    console.log('Created user successful!');
+    return console.log('Created user successful!');
 }
 
 main();

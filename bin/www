@@ -6,7 +6,7 @@ require('module-alias/register');
  */
 
 var app          = require('../app');
-var debug        = require('debug')('express-hello:server');
+var debug        = require('debug')('binhjs:server');
 var http         = require('http');
 var schedule     = require('../application/schedule');
 

@@ -14,10 +14,7 @@ let exceptionHandler = require('./application/exceptions/handler');
 let corsOptions = require('./application/config/cors');
 let app = express();
 
-mongoose.connect(databaseConfig.connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(databaseConfig.connectionString, databaseConfig.mongooseOptions);
 
 app.use(cors(corsOptions));
 app.set('views', './views');
