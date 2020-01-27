@@ -1,6 +1,7 @@
 'use strict';
 
 let axios = require('axios');
+let slackConfig = require('@application/config/service').slack;
 
 class Notification {
     constructor () {
@@ -8,7 +9,7 @@ class Notification {
     }
 
     get slackWebHookUrl () {
-        return 'https://hooks.slack.com/services/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';
+        return slackConfig.webhookUrl;
     }
 
     send () {
