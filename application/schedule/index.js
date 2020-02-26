@@ -1,9 +1,7 @@
 'use strict';
 
-let dailyJob = require('./jobs/dailyJob');
-let everyMinute = require('./jobs/everyMinute');
+let run = require('./run');
 
 module.exports = function (app) {
-    dailyJob.start();
-    everyMinute.start();
+    return run();
 }
