@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+    Change
+*/
+
 'use strict';
 
 require('module-alias/register');
