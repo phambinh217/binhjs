@@ -26,6 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "marked": "^0.8.0",
     "module-alias": "^2.2.2",
+    "moment": "^2.24.0",
     "mongoose": "^5.8.3",
     "morgan": "~1.9.1",
     "socket.io": "^2.3.0"
