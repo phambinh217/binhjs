@@ -22,9 +22,9 @@
     "dotenv": "^8.2.0",
     "ejs": "^2.7.4",
     "express": "~4.16.1",
-    "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "marked": "^0.8.0",
+    "md5": "^2.2.1",
     "module-alias": "^2.2.2",
     "moment": "^2.24.0",
     "mongoose": "^5.8.3",
@@ -43,6 +43,6 @@
     "sass-loader": "^8.0.0"
   },
   "_moduleAliases": {
-    "@application": "application"
+    "@": "./"
   }
 }
