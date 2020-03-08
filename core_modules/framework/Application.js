@@ -4,6 +4,8 @@ let express = require('express');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let logger = require('morgan');
+let cors = require('cors');
+let corsOptions = require('@/config/cors');
 
 class Application {
     constructor (options) {
@@ -33,6 +35,7 @@ class Application {
         this.expressApp.use(bodyParser.urlencoded({ extended: true }));
         this.expressApp.use(bodyParser.json());
         this.expressApp.use(express.static(this.options.publicPath));
+        this.expressApp.use(cors(corsOptions));
     }
 
     getExpressApp () {

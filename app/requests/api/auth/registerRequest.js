@@ -1,6 +1,6 @@
 'use strict';
 
-let { validate } = require('@/binhjs_modules/validator');
+let { validate } = require('@/core_modules/validator');
 let userRepo = require('@/app/repos/userRepo');
 
 module.exports = async function (req, res, next) {

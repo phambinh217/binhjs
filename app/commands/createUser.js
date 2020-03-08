@@ -10,7 +10,7 @@ require('module-alias/register');
 
 let program = require('commander');
 let mongoose = require('mongoose');
-let { validate } = require('@/binhjs_modules/validator');
+let { validate } = require('@/core_modules/validator');
 let databaseConfig = require('@/config/database');
 let userRepo = require('@/app/repos/userRepo');
 let bcryptHelper = require('@/app/helpers/bcrypt');

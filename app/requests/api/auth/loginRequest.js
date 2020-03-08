@@ -2,7 +2,7 @@
 
 let userRepo = require('@/app/repos/userRepo');
 let bcryptHelper = require('@/app/helpers/bcrypt');
-let { validate } = require('@/binhjs_modules/validator');
+let { validate } = require('@/core_modules/validator');
 
 module.exports = async function (req, res, next) {
     let accountMustExisted = function (field, value) {

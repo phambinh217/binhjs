@@ -1,6 +1,6 @@
 'use strict';
 
-let Notification = require('@/binhjs_modules/notification/Notification');
+let Notification = require('@/core_modules/notification/Notification');
 
 class TextNotification extends Notification {
     constructor (message) {

@@ -2,23 +2,20 @@
 
 require('@/bootstrap/dbConnection');
 
-let framework = require('@/binhjs_modules/framework');
+let framework = require('@/core_modules/framework');
 let path = require('path');
-let cors = require('cors');
 let apiRouter = require('@/routes/api');
 let webRouter = require('@/routes/web');
-let corsOptions = require('@/config/cors');
 
 let options = {
     basePath: path.join(__dirname),
-    publicPath: path.join(__dirname, 'public'),
-    viewPath: path.join(__dirname, 'views'),
+    publicPath: path.join(__dirname, '../public'),
+    viewPath: path.join(__dirname, '../views'),
     viewEngine: 'ejs',
 }
 
 let app = framework.createApplication(options);
 
-app.use(cors(corsOptions));
 app.use('/', webRouter);
 app.use('/api', apiRouter);
 

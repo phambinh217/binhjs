@@ -1,7 +1,7 @@
 'use strict';
 
 let accessTokenRepo = require('@/app/repos/accessTokenRepo');
-let { validate } = require('@/binhjs_modules/validator');
+let { validate } = require('@/core_modules/validator');
 
 module.exports = async function (req, res, next) {
     let validToken = function (field, value) {
