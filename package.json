@@ -23,7 +23,6 @@
     "ejs": "^2.7.4",
     "express": "~4.16.1",
     "jsonwebtoken": "^8.5.1",
-    "marked": "^0.8.0",
     "md5": "^2.2.1",
     "module-alias": "^2.2.2",
     "moment": "^2.24.0",

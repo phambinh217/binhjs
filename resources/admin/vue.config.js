@@ -1,5 +1,5 @@
 module.exports = {
-    outputDir: '../public/admin',
+    outputDir: '../../public/admin',
     publicPath: '/admin',
 
     chainWebpack (config) {

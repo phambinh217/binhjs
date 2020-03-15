@@ -1,21 +1,15 @@
 #!/usr/bin/env node
 
-/**
-    Change
-*/
-
 'use strict';
 
 require('module-alias/register');
+require('@/bootstrap/dbConnection');
 
+let { validate } = require('@/cores/validator');
 let program = require('commander');
-let mongoose = require('mongoose');
-let { validate } = require('@/core_modules/validator');
-let databaseConfig = require('@/config/database');
 let userRepo = require('@/app/repos/userRepo');
 let bcryptHelper = require('@/app/helpers/bcrypt');
 
-mongoose.connect(databaseConfig.connectionString, databaseConfig.mongooseOptions);
 
 let emailUnique = function (field, email) {
     return {

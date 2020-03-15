@@ -2,7 +2,7 @@
 
 require('@/bootstrap/dbConnection');
 
-let framework = require('@/core_modules/framework');
+let framework = require('@/cores/framework');
 let path = require('path');
 let apiRouter = require('@/routes/api');
 let webRouter = require('@/routes/web');

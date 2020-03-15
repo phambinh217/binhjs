@@ -2,7 +2,7 @@
 require('module-alias/register');
 
 let debug = require('debug')('framework:server');
-let framework = require('@/core_modules/framework');
+let framework = require('@/cores/framework');
 let app = require('@/bootstrap/app');
 let schedule = require('@/app/schedule');
 let server = framework.createHttpServer(app);
