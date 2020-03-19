@@ -3,10 +3,15 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-exports.bcrypt = function (string) {
+const bcrypt = function (string) {
     return bcrypt.hash(string, saltRounds);
 }
 
-exports.check = function (plainText, encodedString) {
+const check = function (plainText, encodedString) {
     return bcrypt.compare(plainText, encodedString);
+}
+
+module.exports = {
+    bcrypt,
+    check,
 }

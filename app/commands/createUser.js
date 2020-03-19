@@ -10,7 +10,7 @@ const program = require('commander');
 const userRepo = require('@/app/repos/userRepo');
 const bcryptHelper = require('@/app/helpers/bcrypt');
 
-let emailUnique = function (field, email) {
+const emailUnique = function (field, email) {
     return {
         getRuleName () {
             return 'emailUnique';
@@ -31,7 +31,7 @@ let emailUnique = function (field, email) {
     }
 }
 
-let main = async function () {
+const main = async function () {
     program
         .option('-e, --email <email>', 'User email')
         .option('-p, --password <password>', 'User password');

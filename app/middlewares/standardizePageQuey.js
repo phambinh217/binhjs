@@ -8,9 +8,6 @@ module.exports = function (req, res, next) {
         }
 
         req.query.page = page;
-
-        res.locals.seoTags = res.locals.seoTags || {};
-        res.locals.seoTags.pageNumber = page;
     }
 
     next();

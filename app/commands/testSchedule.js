@@ -8,7 +8,7 @@ const dailyJob = require('@/app/schedule/jobs/dailyJob');
 const everyMinute = require('@/app/schedule/jobs/everyMinute');
 const run = require('@/app/schedule/run');
 
-let main = function () {
+const main = function () {
     run('test');
     console.log('Done');
 }
