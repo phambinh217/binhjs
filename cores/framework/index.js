@@ -1,8 +1,8 @@
 'use strict';
 
-let express = require('express');
-let Application = require('./Application');
-let Server = require('./Server');
+const express = require('express');
+const Application = require('./Application');
+const Server = require('./Server');
 
 const createApplication = function (options) {
     return Application.init(options).getExpressApp();

@@ -6,6 +6,7 @@ let bodyParser = require('body-parser');
 let logger = require('morgan');
 let cors = require('cors');
 let corsOptions = require('@/config/cors');
+const abortion = require('./abortion');
 
 class Application {
     constructor (options) {
@@ -36,6 +37,7 @@ class Application {
         this.expressApp.use(bodyParser.json());
         this.expressApp.use(express.static(this.options.publicPath));
         this.expressApp.use(cors(corsOptions));
+        this.expressApp.use(abortion);
     }
 
     getExpressApp () {

@@ -13,7 +13,9 @@ const webMiddilewares = require('@/app/middlewares').web;
 router.use('/', webMiddilewares);
 
 // routers
-router.get('/', homeController.index);
+router.get('/', function (req, res) {
+    res.error404();
+});
 
 router.get('/week-up', function (req, res) {
     return res.json(1);
