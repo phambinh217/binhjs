@@ -1,6 +1,6 @@
 'use strict';
 
-let validate = require('./validate');
+const validate = require('./validate');
 
 module.exports = {
     validate
