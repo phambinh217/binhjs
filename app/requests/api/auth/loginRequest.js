@@ -1,8 +1,8 @@
 'use strict';
 
-let userRepo = require('@/app/repos/userRepo');
-let bcryptHelper = require('@/app/helpers/bcrypt');
-let { validate } = require('@/cores/validator');
+const userRepo = require('@/app/repos/userRepo');
+const bcryptHelper = require('@/app/helpers/bcrypt');
+const { validate } = require('@/cores/validator');
 
 module.exports = async function (req, res, next) {
     let accountMustExisted = function (field, value) {

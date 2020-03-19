@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 require('module-alias/register');
 
-let debug = require('debug')('framework:server');
-let framework = require('@/cores/framework');
-let app = require('@/bootstrap/app');
-let schedule = require('@/app/schedule');
-let server = framework.createHttpServer(app);
+const debug = require('debug')('framework:server');
+const framework = require('@/cores/framework');
+const app = require('@/bootstrap/app');
+const schedule = require('@/app/schedule');
+const server = framework.createHttpServer(app);
 
-let io = require('socket.io')(server);
+const io = require('socket.io')(server);
 app.set('io', io);
 
-let event = require('@/routes/events');
+const event = require('@/routes/events');
 app.set('event', event);
 
 schedule(app);

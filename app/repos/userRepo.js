@@ -1,8 +1,8 @@
 'use strict';
 
-let userModel = require('@/app/models/userModel');
-let accessTokenModel = require('@/app/models/accessTokenModel');
-let jwt = require('@/app/libraries/jwt');
+const userModel = require('@/app/models/userModel');
+const accessTokenModel = require('@/app/models/accessTokenModel');
+const jwt = require('@/app/libraries/jwt');
 
 exports.find = function (id) {
     return userModel.findById(id);

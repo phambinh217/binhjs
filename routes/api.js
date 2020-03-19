@@ -1,20 +1,20 @@
 'use strict';
 
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // controllers
-let authController = require('@/app/controllers/http/api/authController');
-let meController = require('@/app/controllers/http/api/meController');
+const authController = require('@/app/controllers/http/api/authController');
+const meController = require('@/app/controllers/http/api/meController');
 
 // middlewares
-let apiMiddilewares = require('@/app/middlewares').api;
-let requiredAuthenticate = require('@/app/middlewares/requiredAuthenticate');
+const apiMiddilewares = require('@/app/middlewares').api;
+const requiredAuthenticate = require('@/app/middlewares/requiredAuthenticate');
 
 // requests
-let registerRequest = require('@/app/requests/api/auth/registerRequest');
-let loginRequest = require('@/app/requests/api/auth/loginRequest');
-let refreshAccessTokenRequest = require('@/app/requests/api/auth/refreshAccessTokenRequest');
+const registerRequest = require('@/app/requests/api/auth/registerRequest');
+const loginRequest = require('@/app/requests/api/auth/loginRequest');
+const refreshAccessTokenRequest = require('@/app/requests/api/auth/refreshAccessTokenRequest');
 
 // Routers without auth
 router.post('/auth/login', [loginRequest], authController.login);

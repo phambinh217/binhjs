@@ -1,9 +1,9 @@
 'use strict';
 
-let standardizePageQuey = require('./standardizePageQuey');
-let viewGlobalVariables = require('./viewGlobalVariables');
-let url = require('./url');
-let abortion = require('./abortion');
+const standardizePageQuey = require('./standardizePageQuey');
+const viewGlobalVariables = require('./viewGlobalVariables');
+const url = require('./url');
+const abortion = require('./abortion');
 
 let globalMiddilewares = [
     url,

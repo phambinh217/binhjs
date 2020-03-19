@@ -1,7 +1,7 @@
 'use strict';
 
-let jwt = require('jsonwebtoken');
-let authConfig = require('@/config/auth');
+const jwt = require('jsonwebtoken');
+const authConfig = require('@/config/auth');
 
 exports.sign = function (data) {
     return jwt.sign(data, authConfig.jwt.secret)

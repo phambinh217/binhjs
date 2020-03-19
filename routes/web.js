@@ -1,13 +1,13 @@
 'use strict';
 
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // controllers
-let homeController = require('@/app/controllers/http/web/homeController');
+const homeController = require('@/app/controllers/http/web/homeController');
 
 // middlewares
-let webMiddilewares = require('@/app/middlewares').web;
+const webMiddilewares = require('@/app/middlewares').web;
 
 // Common web middleware
 router.use('/', webMiddilewares);

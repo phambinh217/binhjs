@@ -5,11 +5,10 @@
 require('module-alias/register');
 require('@/bootstrap/dbConnection');
 
-let { validate } = require('@/cores/validator');
-let program = require('commander');
-let userRepo = require('@/app/repos/userRepo');
-let bcryptHelper = require('@/app/helpers/bcrypt');
-
+const { validate } = require('@/cores/validator');
+const program = require('commander');
+const userRepo = require('@/app/repos/userRepo');
+const bcryptHelper = require('@/app/helpers/bcrypt');
 
 let emailUnique = function (field, email) {
     return {

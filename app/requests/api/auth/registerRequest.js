@@ -1,7 +1,7 @@
 'use strict';
 
-let { validate } = require('@/cores/validator');
-let userRepo = require('@/app/repos/userRepo');
+const { validate } = require('@/cores/validator');
+const userRepo = require('@/app/repos/userRepo');
 
 module.exports = async function (req, res, next) {
     let validator = await validate(req.body, {

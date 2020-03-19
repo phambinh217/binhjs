@@ -1,8 +1,8 @@
 'use strict';
 
-let userRepo = require('@/app/repos/userRepo');
-let accessTokenRepo = require('@/app/repos/accessTokenRepo');
-let bcryptHelper = require('@/app/helpers/bcrypt');
+const userRepo = require('@/app/repos/userRepo');
+const accessTokenRepo = require('@/app/repos/accessTokenRepo');
+const bcryptHelper = require('@/app/helpers/bcrypt');
 
 exports.register = async function (req, res) {
     let email = req.body.email;

@@ -1,7 +1,7 @@
 'use strict';
 
-let accessTokenRepo = require('@/app/repos/accessTokenRepo');
-let { validate } = require('@/cores/validator');
+const accessTokenRepo = require('@/app/repos/accessTokenRepo');
+const { validate } = require('@/cores/validator');
 
 module.exports = async function (req, res, next) {
     let validToken = function (field, value) {

@@ -1,6 +1,6 @@
 'use strict';
 
-let Notification = require('@/cores/notification/Notification');
+const Notification = require('@/cores/notification/Notification');
 
 class TextNotification extends Notification {
     constructor (message) {

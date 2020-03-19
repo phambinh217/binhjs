@@ -1,7 +1,7 @@
 'use strict';
 
-let jwt = require('@/app/libraries/jwt');
-let accessTokenModel = require('@/app/models/accessTokenModel');
+const jwt = require('@/app/libraries/jwt');
+const accessTokenModel = require('@/app/models/accessTokenModel');
 
 exports.extend = function (accessTokenRecord) {
     this.delete(accessTokenRecord);

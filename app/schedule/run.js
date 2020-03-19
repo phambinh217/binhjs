@@ -1,7 +1,7 @@
 'use strict';
 
-let dailyJob = require('./jobs/dailyJob');
-let everyMinute = require('./jobs/everyMinute');
+const dailyJob = require('./jobs/dailyJob');
+const everyMinute = require('./jobs/everyMinute');
 
 let jobs = [
     dailyJob,

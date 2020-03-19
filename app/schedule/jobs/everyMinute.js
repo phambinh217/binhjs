@@ -1,9 +1,9 @@
 'use strict';
 
-let cron = require('cron');
-let herokuWakeupTask = require('@/app/tasks/herokuWakeupTask');
-let TextNotification = require('@/app/notifications/TextNotification');
-let appConfig = require('@/config/app');
+const cron = require('cron');
+const herokuWakeupTask = require('@/app/tasks/herokuWakeupTask');
+const TextNotification = require('@/app/notifications/TextNotification');
+const appConfig = require('@/config/app');
 
 let dailyJob = new cron.CronJob({
     cronTime: '* * * * *',

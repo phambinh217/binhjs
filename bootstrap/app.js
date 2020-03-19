@@ -2,10 +2,10 @@
 
 require('@/bootstrap/dbConnection');
 
-let framework = require('@/cores/framework');
-let path = require('path');
-let apiRouter = require('@/routes/api');
-let webRouter = require('@/routes/web');
+const framework = require('@/cores/framework');
+const path = require('path');
+const apiRouter = require('@/routes/api');
+const webRouter = require('@/routes/web');
 
 let options = {
     basePath: path.join(__dirname),

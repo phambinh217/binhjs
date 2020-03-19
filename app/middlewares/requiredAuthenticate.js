@@ -1,6 +1,8 @@
-let jwt = require('@/app/libraries/jwt');
-let userRepo = require('@/app/repos/userRepo');
-let accessTokenRepo = require('@/app/repos/accessTokenRepo');
+'use strict';
+
+const jwt = require('@/app/libraries/jwt');
+const userRepo = require('@/app/repos/userRepo');
+const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 
 module.exports = async function (req, res, next) {
     let token = req.headers['x-access-token'] || req.headers['authorization'] || '';

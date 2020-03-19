@@ -1,7 +1,7 @@
 'use strict';
 
-let events = require('events');
-let eventEmitter = new events.EventEmitter();
+const events = require('events');
+const eventEmitter = new events.EventEmitter();
 
 // listenners
 

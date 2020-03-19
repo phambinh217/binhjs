@@ -1,7 +1,7 @@
 'use strict';
 
-let bcrypt = require('bcrypt');
-let saltRounds = 10;
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 exports.bcrypt = function (string) {
     return bcrypt.hash(string, saltRounds);

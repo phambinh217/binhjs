@@ -1,16 +1,15 @@
 'use strict';
 
-require('dotenv').config();
-
-let axios = require('axios');
-let urlHelper = require('../helpers/url');
-let TextNotification = require('../notifications/TextNotification');
+const axios = require('axios');
+const urlHelper = require('@/app/helpers/url');
+const TextNotification = require('@/app/notifications/TextNotification');
+const appConfig = require('@/config/app');
 
 module.exports = function () {
     // let notification = new TextNotification('Run herokuWakeupTask: I still alive');
     // notification.send();
 
-    if (process.env.NODE_ENV == 'production') {
+    if (appConfig.env == 'production') {
         let weekUpUrl = urlHelper.appUrl('week-up');
         axios.get(weekUpUrl);
     }

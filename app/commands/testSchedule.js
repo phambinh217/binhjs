@@ -4,9 +4,9 @@
 require('module-alias/register');
 require('@/bootstrap/dbConnection');
 
-let dailyJob = require('@/app/schedule/jobs/dailyJob');
-let everyMinute = require('@/app/schedule/jobs/everyMinute');
-let run = require('@/app/schedule/run');
+const dailyJob = require('@/app/schedule/jobs/dailyJob');
+const everyMinute = require('@/app/schedule/jobs/everyMinute');
+const run = require('@/app/schedule/run');
 
 let main = function () {
     run('test');

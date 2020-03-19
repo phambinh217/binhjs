@@ -1,6 +1,6 @@
 'use strict';
 
-let mongoose = require('mongoose');
-let databaseConfig = require('@/config/database');
+const mongoose = require('mongoose');
+const databaseConfig = require('@/config/database');
 
 mongoose.connect(databaseConfig.connectionString, databaseConfig.mongooseOptions);

@@ -1,9 +1,9 @@
 'use strict';
 
-let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-let userSchema = new Schema({
+const userSchema = new Schema({
     email: {
         type: String,
         unique: true,
@@ -16,6 +16,6 @@ let userSchema = new Schema({
     }
 });
 
-let userModel = mongoose.model('User', userSchema);
+const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;
