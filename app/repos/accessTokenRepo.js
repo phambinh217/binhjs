@@ -3,8 +3,8 @@
 const jwt = require('@/app/libraries/jwt');
 const accessTokenModel = require('@/app/models/accessTokenModel');
 
-exports.extend = function (accessTokenRecord) {
-    this.delete(accessTokenRecord);
+const extend = function (accessTokenRecord) {
+    accessTokenRecord.remove();
 
     let now = new Date();
     let accessTokenString = jwt.sign({ userId: accessTokenRecord.userId, salt: now.getTime() });
@@ -20,20 +20,27 @@ exports.extend = function (accessTokenRecord) {
         refreshTokenExpiredAt: refreshTokenExpiredAt,
         deviceName: accessTokenRecord.deviceName,
     });
-},
+}
 
-exports.findByAccessToken = function (accessTokenString) {
+const findByAccessToken = function (accessTokenString) {
     return accessTokenModel.findOne({
         accessToken: accessTokenString
     });
-},
+}
 
-exports.findByRefreshToken = function (refreshToken) {
+const findByRefreshToken = function (refreshToken) {
     return accessTokenModel.findOne({
         refreshToken: refreshToken
     });
-},
+}
 
-exports.delete = function (accessTokenRecord) {
+const remove = function (accessTokenRecord) {
     return accessTokenRecord.remove();
+}
+
+module.exports = {
+    extend,
+    findByAccessToken,
+    findByRefreshToken,
+    remove,
 }

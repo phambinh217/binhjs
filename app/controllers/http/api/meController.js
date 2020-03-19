@@ -1,6 +1,6 @@
 'use strict';
 
-exports.showInfo = async function (req, res) {
+const showInfo = async function (req, res) {
     return res.json({
         status: 'success',
         user: {
@@ -8,4 +8,8 @@ exports.showInfo = async function (req, res) {
             email: req.auth.user.email
         }
     });
+}
+
+module.exports = {
+    showInfo,
 }

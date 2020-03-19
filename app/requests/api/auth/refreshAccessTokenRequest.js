@@ -3,25 +3,25 @@
 const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 const { validate } = require('@/cores/validator');
 
-module.exports = async function (req, res, next) {
-    let validToken = function (field, value) {
-        return {
-            getRuleName () {
-                return 'validToken';
-            },
+const validToken = function (field, value) {
+    return {
+        getRuleName () {
+            return 'validToken';
+        },
 
-            async isPass () {
-                if (!value) {
-                    return false;
-                }
-                let accessToken = await accessTokenRepo.findByRefreshToken(value);
-                if (accessToken.userId != req.auth.user._id || accessToken.accessToken != req.auth.accessToken.accessToken) {
-                    return false;
-                }
+        async isPass () {
+            if (!value) {
+                return false;
+            }
+            let accessToken = await accessTokenRepo.findByRefreshToken(value);
+            if (accessToken.userId != req.auth.user._id || accessToken.accessToken != req.auth.accessToken.accessToken) {
+                return false;
             }
         }
     }
+}
 
+module.exports = async function (req, res, next) {
     let validator = await validate(req.body, {
         token: {
             rules: ['required', validToken],

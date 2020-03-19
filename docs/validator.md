@@ -2,7 +2,7 @@
 
 ## Cách sử dụng cơ bản
 ```js
-let { validate } = requrie('@application/validator');
+const { validate } = requrie('@application/validator');
 
 let data = {
     username: '',
@@ -23,7 +23,8 @@ console.log(result);
 
 ## Custom rules của riêng bạn
 
-PhamBinhJS chỉ có thể cung cấp được các rules phổ biến, chung chung. Nếu bạn muốn validate dữ liệu theo các rules của riêng bạn, thì bạn có thể làm như ví dụ dưới đây.
+
+BinhJS chỉ có thể cung cấp được các rules phổ biến, chung chung. Nếu bạn muốn validate dữ liệu theo các rules của riêng bạn, thì bạn có thể làm như ví dụ dưới đây.
 
 Ví dụ sau đây kiểm tra username phải khác 'john'
 ```js

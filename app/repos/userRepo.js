@@ -4,19 +4,19 @@ const userModel = require('@/app/models/userModel');
 const accessTokenModel = require('@/app/models/accessTokenModel');
 const jwt = require('@/app/libraries/jwt');
 
-exports.find = function (id) {
+const find = function find (id) {
     return userModel.findById(id);
 }
 
-exports.findByEmail = function (email) {
+const findByEmail = function (email) {
     return userModel.findOne({ email: email });
 }
 
-exports.create = function (data) {
+const create = function (data) {
     return userModel.create(data);
 }
 
-exports.createAccessToken = function (user, deviceName) {
+const createAccessToken = function (user, deviceName) {
     let now = new Date();
     let accessTokenString = jwt.sign({ userId: user._id, salt: now.getTime() });
     let refreshTokenString = jwt.sign({ userId: user._id, salt: now.getTime() * 10 });
@@ -33,9 +33,17 @@ exports.createAccessToken = function (user, deviceName) {
     });
 }
 
-exports.getAccessTokenForDevice = function (user, deviceName) {
+const getAccessTokenForDevice = function (user, deviceName) {
     return accessTokenModel.findOne({
         userId: user._id,
         deviceName: deviceName
     });
+}
+
+module.exports = {
+    find,
+    findByEmail,
+    create,
+    createAccessToken,
+    getAccessTokenForDevice,
 }

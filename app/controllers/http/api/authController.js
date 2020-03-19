@@ -4,7 +4,7 @@ const userRepo = require('@/app/repos/userRepo');
 const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 const bcryptHelper = require('@/app/helpers/bcrypt');
 
-exports.register = async function (req, res) {
+const register = async function (req, res) {
     let email = req.body.email;
     let password = await bcryptHelper.bcrypt(req.body.password);
 
@@ -22,7 +22,7 @@ exports.register = async function (req, res) {
     });
 }
 
-exports.login =  async function (req, res) {
+const login =  async function (req, res) {
     let email = req.body.email;
     let user = await userRepo.findByEmail(email);
     let userAgent = req.headers['user-agent'];
@@ -46,7 +46,7 @@ exports.login =  async function (req, res) {
     });
 }
 
-exports.refreshAccessToken = async function (req, res) {
+const refreshAccessToken = async function (req, res) {
     let accessToken = req.auth.accessToken;
     accessToken = await accessTokenRepo.extend(accessToken);
 
@@ -57,11 +57,18 @@ exports.refreshAccessToken = async function (req, res) {
     });
 }
 
-exports.logout = function (req, res) {
+const logout = function (req, res) {
     let auth = req.auth;
     accessTokenRepo.delete(auth.accessToken);
 
     return res.json({
         status: 'success',
     });
+}
+
+module.exports = {
+    register,
+    login,
+    refreshAccessToken,
+    logout,
 }

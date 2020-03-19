@@ -1,5 +1,9 @@
 'use strict';
 
-exports.index = function (req, res) {
+const index = function (req, res) {
     return res.render('web/welcome');
+}
+
+module.exports = {
+    index,
 }
