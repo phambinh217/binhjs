@@ -10,7 +10,7 @@ let webRouter = require('@/routes/web');
 let options = {
     basePath: path.join(__dirname),
     publicPath: path.join(__dirname, '../public'),
-    viewPath: path.join(__dirname, '../views'),
+    viewPath: path.join(__dirname, '../resources/views'),
     viewEngine: 'ejs',
 }
 

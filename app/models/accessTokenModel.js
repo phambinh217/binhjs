@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 let Types = Schema.Types;
 
-let AccessTokenSchema = new Schema({
+let accessTokenSchema = new Schema({
     accessToken: String,
     refreshToken: String,
     deviceName: String,
@@ -18,4 +18,6 @@ let AccessTokenSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('AccessToken', AccessTokenSchema);
+let accessTokenModel = mongoose.model('AccessToken', accessTokenSchema);
+
+module.exports = accessTokenModel;

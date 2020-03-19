@@ -4,16 +4,14 @@ let express = require('express');
 let Application = require('./Application');
 let Server = require('./Server');
 
-module.exports = {
-    createApplication (options) {
-        return Application.init(options).getExpressApp();
-    },
+exports.createApplication = function (options) {
+    return Application.init(options).getExpressApp();
+}
 
-    createHttpServer (options) {
-        return Server.init(options).getHttpServer();
-    },
+exports.createHttpServer = function (options) {
+    return Server.init(options).getHttpServer();
+}
 
-    createRouter () {
-        return express.Router();
-    },
+exports.createRouter = function () {
+    return express.Router();
 }
