@@ -4,9 +4,9 @@ const standardizePageQuey = require('./standardizePageQuey');
 
 let globalMiddilewares = [
     standardizePageQuey,
-]
+];
 
-module.exports = {
+const middilewares = {
     web: [
         globalMiddilewares,
     ],
@@ -15,3 +15,5 @@ module.exports = {
         globalMiddilewares,
     ]
 }
+
+module.exports = middilewares;

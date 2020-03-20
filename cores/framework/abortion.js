@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (req, res, next) {
+const abortion = function (req, res, next) {
     res.error404 = function (customViewPath) {
         let viewEngine = req.app.get('view engine');
         let viewPath = req.app.get('views');
@@ -15,3 +15,5 @@ module.exports = function (req, res, next) {
 
     next();
 }
+
+module.exports = abortion

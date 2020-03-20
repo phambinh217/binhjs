@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (req, res, next) {
+const standardizePageQuey = function (req, res, next) {
     if (req.query.hasOwnProperty('page')) {
         let page = Number(req.query.page);
         if (page <= 0) {
@@ -12,3 +12,5 @@ module.exports = function (req, res, next) {
 
     next();
 }
+
+module.exports = standardizePageQuey;

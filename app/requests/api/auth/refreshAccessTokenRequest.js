@@ -21,7 +21,7 @@ const validToken = function (field, value) {
     }
 }
 
-module.exports = async function (req, res, next) {
+const refreshAccessTokenRequest = async function (req, res, next) {
     let validator = await validate(req.body, {
         token: {
             rules: ['required', validToken],
@@ -42,3 +42,5 @@ module.exports = async function (req, res, next) {
 
     next();
 }
+
+module.exports = refreshAccessTokenRequest;

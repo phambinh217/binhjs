@@ -1,7 +1,6 @@
 'use strict';
 
 const cron = require('cron');
-const TextNotification = require('@/app/notifications/TextNotification');
 const appConfig = require('@/config/app');
 
 let dailyJob = new cron.CronJob({

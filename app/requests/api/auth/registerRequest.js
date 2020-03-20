@@ -18,7 +18,7 @@ const uniqueEmail = function (field, email) {
     }
 }
 
-module.exports = async function (req, res, next) {
+const registerRequest = async function (req, res, next) {
     let validator = await validate(req.body, {
         email: {
             rules: ['required', 'email', uniqueEmail],
@@ -40,3 +40,5 @@ module.exports = async function (req, res, next) {
 
     next();
 }
+
+module.exports = registerRequest;

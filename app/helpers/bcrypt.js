@@ -1,14 +1,14 @@
 'use strict';
 
-const bcrypt = require('bcrypt');
+const bcryptLib = require('bcrypt');
 const saltRounds = 10;
 
 const bcrypt = function (string) {
-    return bcrypt.hash(string, saltRounds);
+    return bcryptLib.hash(string, saltRounds);
 }
 
 const check = function (plainText, encodedString) {
-    return bcrypt.compare(plainText, encodedString);
+    return bcryptLib.compare(plainText, encodedString);
 }
 
 module.exports = {

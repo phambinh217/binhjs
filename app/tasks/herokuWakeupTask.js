@@ -1,16 +1,16 @@
 'use strict';
 
 const axios = require('axios');
-const urlHelper = require('@/app/helpers/url');
-const TextNotification = require('@/app/notifications/TextNotification');
 const appConfig = require('@/config/app');
+const { appUrl } = require('@/app/helpers/url');
+const { sendNotification } = require('@/cores/notification');
 
-module.exports = function () {
-    // let notification = new TextNotification('Run herokuWakeupTask: I still alive');
-    // notification.send();
+const herokuWakeupTask = function () {
+    // sendNotification('Run task: herokuWakeupTask');
 
     if (appConfig.env == 'production') {
-        let weekUpUrl = urlHelper.appUrl('week-up');
+        let weekUpUrl = appUrl('week-up');
         axios.get(weekUpUrl);
     }
 }
+module.exports = herokuWakeupTask;

@@ -2,6 +2,8 @@
 
 const run = require('./run');
 
-module.exports = function (app) {
+const schedule = function (app) {
     return run();
 }
+
+module.exports = schedule;

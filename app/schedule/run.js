@@ -6,9 +6,9 @@ const everyMinute = require('./jobs/everyMinute');
 let jobs = [
     dailyJob,
     everyMinute,
-]
+];
 
-module.exports = function (mode = 'normal') {
+const run = function (mode = 'normal') {
     if (mode == 'normal') {
         for (let job of jobs) {
             job.start();
@@ -19,3 +19,5 @@ module.exports = function (mode = 'normal') {
         }
     }
 }
+
+module.exports = run;
