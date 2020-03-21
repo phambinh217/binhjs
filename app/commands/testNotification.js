@@ -1,9 +1,12 @@
+#!/usr/bin/env node
+
 'use strict';
+
 require('module-alias/register');
 
 const { sendNotification } = require('@/cores/notification');
 
-const main = function () {
+function main () {
     sendNotification('Hello World! BinhJS');
     console.log('done');
 }

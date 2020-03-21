@@ -3,7 +3,7 @@
 const { validate } = require('@/cores/validator');
 const userRepo = require('@/app/repos/userRepo');
 
-const uniqueEmail = function (field, email) {
+function uniqueEmail(field, email) {
     return {
         getRuleName () {
             return 'uniqueEmail';
@@ -18,7 +18,7 @@ const uniqueEmail = function (field, email) {
     }
 }
 
-const registerRequest = async function (req, res, next) {
+async function registerRequest (req, res, next) {
     let validator = await validate(req.body, {
         email: {
             rules: ['required', 'email', uniqueEmail],

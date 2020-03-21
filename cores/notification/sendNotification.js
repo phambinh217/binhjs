@@ -3,7 +3,7 @@
 const SimpleTextNotification = require('./notifications/SimpleTextNotification');
 const notificationDriverFactory = require('./notificationDriverFactory');
 
-const sendNotification = function (message) {
+function sendNotification (message) {
     if (typeof message == 'string') {
         message = new SimpleTextNotification(message);
     }

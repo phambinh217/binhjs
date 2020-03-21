@@ -4,15 +4,15 @@ const express = require('express');
 const Application = require('./Application');
 const Server = require('./Server');
 
-const createApplication = function (options) {
+function createApplication (options) {
     return Application.init(options).getExpressApp();
 }
 
-const createHttpServer = function (options) {
+function createHttpServer (options) {
     return Server.init(options).getHttpServer();
 }
 
-const createRouter = function () {
+function createRouter () {
     return express.Router();
 }
 

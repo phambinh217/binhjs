@@ -3,11 +3,11 @@
 const bcryptLib = require('bcrypt');
 const saltRounds = 10;
 
-const bcrypt = function (string) {
+function bcrypt (string) {
     return bcryptLib.hash(string, saltRounds);
 }
 
-const check = function (plainText, encodedString) {
+function check (plainText, encodedString) {
     return bcryptLib.compare(plainText, encodedString);
 }
 

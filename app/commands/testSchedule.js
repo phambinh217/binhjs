@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 'use strict';
 
 require('module-alias/register');
@@ -8,7 +9,7 @@ const dailyJob = require('@/app/schedule/jobs/dailyJob');
 const everyMinute = require('@/app/schedule/jobs/everyMinute');
 const run = require('@/app/schedule/run');
 
-const main = function () {
+function main () {
     run('test');
     console.log('Done');
 }

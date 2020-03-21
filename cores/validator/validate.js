@@ -1,6 +1,6 @@
 'use strict';
 
-const getData = function (data, key) {
+function getData (data, key) {
     try {
         return key.split('.').reduce((data ,i) => data[i], data);
     } catch (error) {

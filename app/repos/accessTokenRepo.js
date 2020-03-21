@@ -3,7 +3,7 @@
 const jwt = require('@/app/libraries/jwt');
 const accessTokenModel = require('@/app/models/accessTokenModel');
 
-const extend = function (accessTokenRecord) {
+function extend (accessTokenRecord) {
     accessTokenRecord.remove();
 
     let now = new Date();
@@ -22,19 +22,19 @@ const extend = function (accessTokenRecord) {
     });
 }
 
-const findByAccessToken = function (accessTokenString) {
+function findByAccessToken (accessTokenString) {
     return accessTokenModel.findOne({
         accessToken: accessTokenString
     });
 }
 
-const findByRefreshToken = function (refreshToken) {
+function findByRefreshToken (refreshToken) {
     return accessTokenModel.findOne({
         refreshToken: refreshToken
     });
 }
 
-const remove = function (accessTokenRecord) {
+function remove (accessTokenRecord) {
     return accessTokenRecord.remove();
 }
 

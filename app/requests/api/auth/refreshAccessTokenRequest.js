@@ -3,7 +3,7 @@
 const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 const { validate } = require('@/cores/validator');
 
-const validToken = function (field, value) {
+function validToken (field, value) {
     return {
         getRuleName () {
             return 'validToken';
@@ -21,7 +21,7 @@ const validToken = function (field, value) {
     }
 }
 
-const refreshAccessTokenRequest = async function (req, res, next) {
+async function refreshAccessTokenRequest (req, res, next) {
     let validator = await validate(req.body, {
         token: {
             rules: ['required', validToken],

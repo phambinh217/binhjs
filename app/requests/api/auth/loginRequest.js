@@ -4,7 +4,7 @@ const userRepo = require('@/app/repos/userRepo');
 const bcryptHelper = require('@/app/helpers/bcrypt');
 const { validate } = require('@/cores/validator');
 
-const accountMustExisted = function (field, value) {
+function accountMustExisted (field, value) {
     return {
         getRuleName () {
             return 'accountMustExisted';
@@ -35,7 +35,7 @@ const accountMustExisted = function (field, value) {
     }
 }
 
-const loginRequest = async function (req, res, next) {
+async function loginRequest (req, res, next) {
     let validator = await validate(req.body, {
         email: {
             rules: ['required', 'email', accountMustExisted],

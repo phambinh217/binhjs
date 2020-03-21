@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const appConfig = require('@/config/app');
 
-const appUrl = function (append) {
+function appUrl (append) {
     while (append[0] == '/') {
         append = append.substring(1)
     }

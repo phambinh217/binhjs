@@ -1,6 +1,6 @@
 'use strict';
 
-const standardizePageQuey = function (req, res, next) {
+function standardizePageQuey (req, res, next) {
     if (req.query.hasOwnProperty('page')) {
         let page = Number(req.query.page);
         if (page <= 0) {

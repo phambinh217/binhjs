@@ -8,7 +8,7 @@ let jobs = [
     everyMinute,
 ];
 
-const run = function (mode = 'normal') {
+function run (mode = 'normal') {
     if (mode == 'normal') {
         for (let job of jobs) {
             job.start();

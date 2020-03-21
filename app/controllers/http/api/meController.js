@@ -1,6 +1,6 @@
 'use strict';
 
-const showInfo = async function (req, res) {
+async function showInfo (req, res) {
     return res.json({
         status: 'success',
         user: {

@@ -1,6 +1,6 @@
 'use strict';
 
-const index = function (req, res) {
+function index (req, res) {
     return res.render('web/welcome');
 }
 

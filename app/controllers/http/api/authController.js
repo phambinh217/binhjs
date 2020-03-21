@@ -4,7 +4,7 @@ const userRepo = require('@/app/repos/userRepo');
 const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 const bcryptHelper = require('@/app/helpers/bcrypt');
 
-const register = async function (req, res) {
+async function register(req, res) {
     let email = req.body.email;
     let password = await bcryptHelper.bcrypt(req.body.password);
 
@@ -22,7 +22,7 @@ const register = async function (req, res) {
     });
 }
 
-const login =  async function (req, res) {
+async function login(req, res) {
     let email = req.body.email;
     let user = await userRepo.findByEmail(email);
     let userAgent = req.headers['user-agent'];
@@ -46,7 +46,7 @@ const login =  async function (req, res) {
     });
 }
 
-const refreshAccessToken = async function (req, res) {
+async function refreshAccessToken(req, res) {
     let accessToken = req.auth.accessToken;
     accessToken = await accessTokenRepo.extend(accessToken);
 
@@ -57,7 +57,7 @@ const refreshAccessToken = async function (req, res) {
     });
 }
 
-const logout = function (req, res) {
+function logout(req, res) {
     let auth = req.auth;
     accessTokenRepo.delete(auth.accessToken);
 

@@ -3,11 +3,11 @@
 const jwt = require('jsonwebtoken');
 const authConfig = require('@/config/auth');
 
-const sign = function (data) {
+function sign (data) {
     return jwt.sign(data, authConfig.jwt.secret)
 }
 
-const verify = function (token, handle) {
+function verify (token, handle) {
     return jwt.verify(token, authConfig.jwt.secret, handle);
 }
 

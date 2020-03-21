@@ -2,7 +2,7 @@
 
 const run = require('./run');
 
-const schedule = function (app) {
+function schedule (app) {
     return run();
 }
 

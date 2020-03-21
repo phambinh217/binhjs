@@ -2,7 +2,7 @@
 
 const SlackDriver = require('./drivers/SlackDriver');
 
-const notificationDriverFactory = function (driver, notification) {
+function notificationDriverFactory (driver, notification) {
     if (driver == 'slack') {
         return new SlackDriver(notification);
     }

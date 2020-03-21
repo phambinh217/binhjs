@@ -4,7 +4,7 @@ const jwt = require('@/app/libraries/jwt');
 const userRepo = require('@/app/repos/userRepo');
 const accessTokenRepo = require('@/app/repos/accessTokenRepo');
 
-const requiredAuthenticate = async function (req, res, next) {
+async function requiredAuthenticate (req, res, next) {
     let token = req.headers['x-access-token'] || req.headers['authorization'] || '';
     if (token.startsWith('Bearer ')) {
         token = token.slice(7, token.length);
