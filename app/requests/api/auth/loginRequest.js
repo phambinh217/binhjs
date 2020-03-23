@@ -11,7 +11,7 @@ function accountMustExisted (field, value) {
         },
 
         async isPass () {
-            let password = req.body.password;
+            let password = value;
             if (!password) {
                 return false;
             }
