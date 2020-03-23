@@ -13,7 +13,7 @@ async function requiredAuthenticate (req, res, next) {
     if (!token) {
         return res.json({
             success: false,
-            message: 'Vấn đề xác thực 1'
+            message: 'Vấn đề xác thực'
         }, 200);
     }
 
@@ -31,7 +31,7 @@ async function requiredAuthenticate (req, res, next) {
     if (!accessToken) {
         return res.json({
             status: 'failed',
-            message: 'Vấn đề xác thực 2'
+            message: 'Vấn đề xác thực'
         }, 200);
     }
 
