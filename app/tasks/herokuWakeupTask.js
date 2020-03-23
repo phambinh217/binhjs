@@ -5,7 +5,7 @@ const appConfig = require('@/config/app');
 const { appUrl } = require('@/app/helpers/url');
 const { sendNotification } = require('@/cores/notification');
 
-function herokuWakeupTask () {
+function runHerokuWakeupTask () {
     // sendNotification('Run task: herokuWakeupTask');
 
     if (appConfig.env == 'production') {
@@ -14,4 +14,4 @@ function herokuWakeupTask () {
     }
 }
 
-module.exports = herokuWakeupTask;
+module.exports = runHerokuWakeupTask;
