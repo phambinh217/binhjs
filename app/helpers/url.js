@@ -15,7 +15,7 @@ function appUrl (append) {
 
 function affiliatedUrl (url) {
     url = encodeURIComponent(url);
-    let publisherId = affiliateConfig.accesstrade.publisherId;
+    let publisherId = affiliateConfig.accesstrade.pubId;
     let utmSource = affiliateConfig.accesstrade.utmSource;
     let utmMedium = affiliateConfig.accesstrade.utmMedium;
     let utmContent = affiliateConfig.accesstrade.utmContent;

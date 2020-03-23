@@ -65,7 +65,7 @@ class CrawlShoopeProductCommand {
         if (collection.hasOwnProperty('crawl') && collection.crawl.hasOwnProperty('titleIncludes')) {
             return collection.crawl.titleIncludes.every(requireTexts => {
                 return requireTexts.some(text => {
-                    return strSlug(product.name).includes(text);
+                    return strSlug(product.name).replace(/-/ig, ' ').includes(text);
                 });
             });
         }

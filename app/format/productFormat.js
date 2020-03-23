@@ -19,7 +19,6 @@ function simpleFormatProduct (product) {
     }
 
     injectProductUrls(product);
-
     product.formatedOriginalPrice = moneyFormat(product.originalPrice);
     product.formatedPrice = moneyFormat(product.price);
 
@@ -27,6 +26,7 @@ function simpleFormatProduct (product) {
         uniqueId: product.uniqueId,
         title: product.title,
         url: product.url,
+        affiliatedUrl: product.affiliatedUrl,
         price: product.price,
         currency: product.currency,
         originalPrice: product.originalPrice,
@@ -49,16 +49,15 @@ function standardformatProduct (product) {
         return null;
     }
 
-    injectProductUrls(product);
-
     let simpleFormatedProduct = simpleFormatProduct(product);
-    let htmlDescription = nl2br(product.description.trim()).replace(/#(\S[^,]*)/g, '<a title="Xem các sản phẩm $1" href="/hashtag/$1">#$1</a>');
+    let htmlDescription = nl2br(product.description.trim());
 
     let advancedProduct = {
         htmlDescription,
         hashtags: product.hashtags,
         priceHistories: product.priceHistories,
         attributes: product.attributes,
+        rating: product.rating,
     }
 
     return {

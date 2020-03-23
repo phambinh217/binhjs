@@ -6,7 +6,7 @@ const convertProductSort = require('@/app/queryConverters/productSortConverter')
 const { standardformatProduct, simpleFormatProduct } = require('@/app/format/productFormat');
 
 async function getListProduct (req, res) {
-    let productPerpage = 30;
+    let productPerpage = req.query.perpage || 30;
     let productCurrentPage = req.query.page || 1;
     let productQuery = convertProductQuery(req.query);
     let productSort = convertProductSort(req.query);
@@ -19,7 +19,7 @@ async function getListProduct (req, res) {
             .skip((productPerpage * productCurrentPage) - productPerpage)
     ).map(simpleFormatProduct);
 
-    let totalItem = await productRepo.count(convertProductQuery());
+    let totalItem = await productRepo.count(productQuery);
 
     return res.json({
         status: 'success',

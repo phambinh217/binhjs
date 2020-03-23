@@ -10,6 +10,15 @@ function standardizePageQuey (req, res, next) {
         req.query.page = page;
     }
 
+    if (req.query.hasOwnProperty('perpage')) {
+        let perpage = Number(req.query.perpage);
+        if (perpage <= 0) {
+            perpage = 1;
+        }
+
+        req.query.perpage = perpage;
+    }
+
     next();
 }
 

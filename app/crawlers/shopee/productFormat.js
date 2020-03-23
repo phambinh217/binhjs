@@ -44,6 +44,10 @@ function formatProduct (shopeeProductData, collection) {
 
     let slug = strSlug(shopeeProductData.name.trim());
 
+    let hashtags = shopeeProductData.hashtag_list.map(hashtag => {
+        return hashtag.replace(/#/g, '');
+    });
+
     return {
         title: shopeeProductData.name,
         price: price,
@@ -60,7 +64,7 @@ function formatProduct (shopeeProductData, collection) {
         soldCount: shopeeProductData.historical_sold,
         commentedCount: shopeeProductData.cmt_count,
         featuredImage: featuredImage,
-        hashtags: shopeeProductData.hashtag_list,
+        hashtags: hashtags,
         uniqueId: uniqueId,
         collections: [collection.id],
         priceHistories: [{
