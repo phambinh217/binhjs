@@ -16,12 +16,14 @@ const registerRequest = require('@/app/requests/api/auth/registerRequest');
 const loginRequest = require('@/app/requests/api/auth/loginRequest');
 const refreshAccessTokenRequest = require('@/app/requests/api/auth/refreshAccessTokenRequest');
 
+// Common middleware
+router.use('/', [ apiMiddilewares ]);
+
 // Routers without auth
 router.post('/auth/login', [loginRequest], authController.login);
 router.post('/auth/register', [registerRequest], authController.register);
 
-// Common middleware
-router.use('/', [ apiMiddilewares, requiredAuthenticate ]);
+router.use('/', [ requiredAuthenticate ]);
 
 // Routers with auth
 router.delete('/auth/logout', authController.logout);

@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = io => {
-    io.on('connection',  socket => {
+module.exports = function (io) {
+    io.on('connection', function (socket) {
 
     });
 }
