@@ -22,6 +22,9 @@ const getDetailProductRequest = require('@/app/requests/api/product/getDetailPro
 
 router.use('/', [ apiMiddilewares ]);
 
+// Common middleware
+router.use('/', [ apiMiddilewares ]);
+
 // Routers without auth
 router.post('/auth/login', [loginRequest], authController.login);
 router.post('/auth/register', [registerRequest], authController.register);
