@@ -2,10 +2,11 @@
 
 const ShopeeProductCrawler = require('@/app/crawlers/shopee/ShopeeProductCrawler');
 const formatProduct = require('@/app/crawlers/shopee/productFormat');
-const collections = require('@/config/crawler/collections');
+const collections = require('@/config/collections');
 const { strSlug } = require('@/app/helpers/str');
 const productRepo = require('@/app/repos/productRepo');
 const CrawledShopeeProductsNotification = require('@/app/notifications/CrawledShopeeProductsNotification');
+const { sendNotification } = require('@/cores/notification');
 
 class CrawlShoopeProductCommand {
     startWithCollection (collection) {
@@ -18,12 +19,13 @@ class CrawlShoopeProductCommand {
 
     skipProduct (product) {
         this.totalSkippedProduct++;
-        console.log(`\t\tSkip product`);
+        // console.log(`\t\tSkip product`);
     }
 
     eachProduct (product, collection) {
         let productData = formatProduct(product, collection);
         let commandSelf = this;
+        console.log(`\t\tCreated: ${productData.title}`);
 
         productRepo.collectFromCrawler(productData, collection, {
             onCreated (createdProduct) {
@@ -58,7 +60,7 @@ class CrawlShoopeProductCommand {
             totalFailedProduct: this.totalFailedProduct,
         });
 
-        noti.send();
+        sendNotification(noti);
     }
 
     crawlable (product, collection) {
@@ -140,7 +142,13 @@ class CrawlShoopeProductCommand {
 }
 
 function runCrawlShopeeProductTask () {
-    let crawl = new CrawlShoopeProductCommand(collections);
+    let childsCollection = [];
+    for (let rootCollection of collections) {
+        let childs = rootCollection.childs;
+        childs.map(item => item.parentId = rootCollection.id);
+        childsCollection = childsCollection.concat(childs);
+    }
+    let crawl = new CrawlShoopeProductCommand(childsCollection);
     crawl.run();
 }
 

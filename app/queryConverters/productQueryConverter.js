@@ -33,8 +33,14 @@ function convertProductQuery (options, query) {
         query.isFreeShipping = true;
     }
 
-    if ('collection' in options && options.collection != 'all') {
-        query.collections = { $in: Number(options.collection) };
+    if ('collections' in options && options.collections != 'all') {
+        let collectionIds = [];
+        if (options.collections.includes(',')) {
+            collectionIds = options.collections.split(',').map(id => Number(id.trim()));
+        } else {
+            collectionIds.push(Number(options.collections));
+        }
+        query.collections = { $in: collectionIds };
     }
 
     if ('hashtag' in options) {

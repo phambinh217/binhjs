@@ -55,6 +55,9 @@ function standardformatProduct (product) {
     let advancedProduct = {
         htmlDescription,
         hashtags: product.hashtags,
+        source: {
+            shopId: product.source.shopId,
+        },
         priceHistories: product.priceHistories,
         attributes: product.attributes,
         rating: product.rating,

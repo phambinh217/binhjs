@@ -1,12 +1,12 @@
 'use strict';
 
-const collections = require('@/config/crawler/collections');
+const collections = require('@/config/collections');
 const { standardFormatCollection } = require('@/app/format/collectionFormat');
 
-async function getAllCollections (req, res) {
+function getAllCollections (req, res) {
     let formatedCollections = [];
     for (let collection of collections) {
-        formatedCollections.push(await standardFormatCollection(collection));
+        formatedCollections.push(standardFormatCollection(collection));
     }
 
     return res.json({

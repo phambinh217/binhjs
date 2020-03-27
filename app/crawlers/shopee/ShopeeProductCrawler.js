@@ -32,24 +32,33 @@ class ShopeeProductCrawler {
         this.startAtPage(this.currentPage);
 
         crawlProductsAtPage(this.queryPrams, this.currentPage)
-        .then(({ data: response }) => {
-            response.items.forEach(product =>  {
-                if (this.isSkipProduct(product) == false) {
-                    let request = crawlSingleProduct(product.itemid, product.shopid);
-                    let thread = new Thread(request);
-                    this.threadObserver.push(thread);
+            .then(({ data: response }) => {
+                let totalSkip = 0;
+                response.items.forEach(product =>  {
+                    if (this.isSkipProduct(product) == false) {
+                        let request = crawlSingleProduct(product.itemid, product.shopid);
+                        let thread = new Thread(request);
+                        this.threadObserver.push(thread);
 
-                    request.then(({ data: response }) => {
-                        this.eachProduct(response.item);
-                    })
-                    .finally(e => this.threadObserver.ifDone(threads => {
-                        this.doneAtPage(this.currentPage, threads);
-                        this.currentPage++;
-                        this.run();
-                    }));
+                        request.then(({ data: response }) => {
+                            this.eachProduct(response.item);
+                        })
+                        .finally(e => this.threadObserver.ifDone(threads => {
+                            this.doneAtPage(this.currentPage, threads);
+                            this.currentPage++;
+                            this.run();
+                        }));
+                    } else {
+                        totalSkip++;
+                    }
+                });
+
+                if (totalSkip == response.items.length) {
+                    this.doneAtPage(this.currentPage, []);
+                    this.currentPage++;
+                    this.run();
                 }
             });
-        });
     }
 }
 

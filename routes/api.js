@@ -9,6 +9,7 @@ const meController = require('@/app/controllers/http/api/meController');
 const productController = require('@/app/controllers/http/api/productController');
 const collectionController = require('@/app/controllers/http/api/collectionController');
 const bannerController = require('@/app/controllers/http/api/bannerController');
+const shopController = require('@/app/controllers/http/api/shopController');
 
 // middlewares
 const apiMiddilewares = require('@/app/middlewares').api;
@@ -31,6 +32,7 @@ router.post('/auth/register', [registerRequest], authController.register);
 
 router.get('/products', productController.getListProduct);
 router.get('/products/:uniqueId', [ getDetailProductRequest ], productController.getDetailProduct);
+router.get('/shops/:shopId', shopController.getDetailShop);
 router.get('/collections', collectionController.getAllCollections);
 router.get('/banners', bannerController.getAllBanners);
 

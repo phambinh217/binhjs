@@ -1,16 +1,21 @@
 'use strict';
 
-let productRepo = require('@/app/repos/productRepo');
+function standardFormatCollection (collection) {
+    let childs = [];
 
-async function standardFormatCollection (collection) {
-    let totalProduct = await productRepo.count({ collections: { $in: collection.id }});
+    for (let child of collection.childs) {
+        childs.push({
+            id: child.id,
+            title: child.title,
+            handle: child.handle,
+        });
+    }
 
     return {
         id: collection.id,
         title: collection.title,
         handle: collection.handle,
-        image: collection.image,
-        totalProduct: totalProduct,
+        childs: childs
     }
 }
 

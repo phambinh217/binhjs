@@ -42,6 +42,9 @@ function collectFromCrawler (productData, collection, options) {
                     if (createdProduct.collections.indexOf(collection.id) == -1) {
                         createdProduct.collections.push(collection.id);
                     }
+                    if (collection.parentId && createdProduct.collections.indexOf(collection.parentId) == -1) {
+                        createdProduct.collections.push(collection.parentId);
+                    }
                     createdProduct.rating = productData.rating || createdProduct.rating;
                     createdProduct.price = productData.price || createdProduct.price;
                     createdProduct.originalPrice = productData.originalPrice || createdProduct.originalPrice;
