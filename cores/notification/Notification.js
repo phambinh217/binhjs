@@ -1,5 +1,7 @@
 'use strict';
 
+const slackConfig = require('@/config/service').slack;
+
 class Notification {
     constructor () {
         //

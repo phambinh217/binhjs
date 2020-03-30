@@ -4,11 +4,14 @@ For lazy developer, project base on expressjs and mongodb. Useful for nodejs web
 # System Requriement
 - NodeJS v12 or higher
 - Mongodb
-- Nodemon
 
 # General features
 - Basic jwt auth
 - Available admin UI with vuejs
+- Structed directory
+- Schedule
+- Custom command
+- Helpers
 
 # Features for developer
 - Base on expressjs and mongodb (mongoose)
@@ -22,7 +25,7 @@ For lazy developer, project base on expressjs and mongodb. Useful for nodejs web
 - Step 2. Run `cp env.example .env`
 - Step 3. Config your information at `.env`
 - Step 4. Run `node app/commands/createUser -e <admin-emainl> -p <admin-password>` to create first admin user
-- Step 5. Run `nodemon -L server` at root project to start
+- Step 5. Run `npm run dev` at root project to start
 
 # Run
 
