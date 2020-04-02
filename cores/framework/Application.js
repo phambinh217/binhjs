@@ -1,11 +1,11 @@
 'use strict';
 
-let express = require('express');
-let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
-let logger = require('morgan');
-let cors = require('cors');
-let corsOptions = require('@/config/cors');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const cors = require('cors');
+const corsOptions = require('@/config/cors');
 const abortion = require('./abortion');
 
 class Application {
